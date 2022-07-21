@@ -1,61 +1,73 @@
+const { boolean } = require("yargs");
+
 function negate(a) {
-  // your code here
+  return !a;
 };
 
 function both(a, b) {
-  // your code here
+  return a && b;
 };
 
 function either(a, b) {
-  // your code here
+  return a || b;
 };
 
 function none(a, b) {
-  // your code here
+  return !a && !b;
 };
 
 function one(a, b) {
-  // your code here
+  if (a && b) {
+    return false;
+  } else if (!a && b) {
+    return true; 
+  } else if (!a && !b) {
+    return false;
+  } else if (a && !b) {
+    return true;
+  }
 };
 
 function truthiness(a) {
-  // your code here
+  return Boolean(a);
 };
 
 function isEqual(a, b) {
-  // your code here
+  return a === b;
 };
 
 function isGreaterThan(a, b) {
-  // your code here
+  return a > b;
 };
 
 function isLessThanOrEqualTo(a, b) {
-  // your code here
+  return a < b || a === b;
 };
 
 function isOdd(a) {
-  // your code here
+  return a % 2 == 1;  
 };
 
 function isEven(a) {
-  // your code here
+  return !isOdd(a);
 };
 
 function isSquare(a) {
-  // your code here
+  return Math.sqrt(a) % 1 === 0;
 };
 
 function startsWith(char, string) {
-  // your code here
+  return char === string[0];
 };
 
 function containsVowels(string) {
-  // your code here
+  const pattern = /[aeiouAEIOU]/gm;
+  return pattern.test(string);
 };
 
 function isLowerCase(string) {
-  // your code here
+  const pattern = /[A-Z]/g;
+  return !pattern.test(string);
 };
 
 module.exports = {
